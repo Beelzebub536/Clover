@@ -18,14 +18,14 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/career" element={<Career />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="*" element={<NotFound />} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/team" element={<Team />} />
+            <Route exact path="/services" element={<Services />} />
+            <Route exact path="/career" element={<Career />} />
+            <Route exact path="/admin" element={<Admin />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

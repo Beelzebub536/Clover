@@ -7,7 +7,7 @@ const ServiceCard = ({ icon, title, description, delay = 0 }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
     >
       <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-4 mx-auto">
