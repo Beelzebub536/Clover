@@ -1,6 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Rocket, Code, Server, Cloud } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Rocket,
+  Code,
+  Server,
+  Cloud,
+  Clover,
+  MoonStar,
+  Cat,
+  Facebook,
+  Boxes,
+  Database,
+  DatabaseBackup,
+  DatabaseZap,
+  Linkedin,
+  Github,
+  Bitcoin,
+  FileChartColumn,
+  Ghost,
+  Sprout,
+} from "lucide-react";
 
 const Hero = () => {
   return (
@@ -26,14 +46,30 @@ const Hero = () => {
 
       {/* Floating Icons */}
       <div className="absolute inset-0 overflow-hidden">
-        {[Rocket, Code, Server, Cloud].map((Icon, i) => (
+        {[
+          Rocket,
+          Code,
+          Cloud,
+          Clover,
+          MoonStar,
+          Cat,
+          Boxes,
+          DatabaseBackup,
+          DatabaseZap,
+          Facebook,
+          Linkedin,
+          Github,
+          Bitcoin,
+          FileChartColumn,
+          Ghost,
+          Sprout,
+        ].map((Icon, i) => (
           <motion.div
             key={i}
-            className="absolute text-emerald-400 opacity-30"
+            className="absolute text-emerald-500 opacity-30"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              fontSize: `${Math.random() * 40 + 20}px`,
             }}
             animate={{
               y: [0, Math.random() * 100 - 50, 0],
@@ -46,7 +82,7 @@ const Hero = () => {
               repeatType: "mirror",
             }}
           >
-            <Icon size={48} />
+            <Icon size={Math.random() * 20 + 40} />
           </motion.div>
         ))}
       </div>
@@ -75,7 +111,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-300 mb-8"
             >
-              We craft cutting-edge digital solutions that empower businesses to thrive in the modern era.
+              We craft cutting-edge digital solutions that empower businesses to
+              thrive in the modern era.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -83,22 +120,25 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             >
-              <motion.a
-                href="#services"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                Explore Services <ArrowRight size={18} />
-              </motion.a>
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-transparent border-2 border-emerald-400 text-white font-semibold rounded-lg hover:bg-emerald-800/20 transition-colors duration-300 flex items-center justify-center gap-2"
-              >
-                Contact Us
-              </motion.a>
+              {[
+                {
+                  href: "#services",
+                  text: "Explore Services",
+                  icon: <ArrowRight size={18} />,
+                },
+                { href: "#contact", text: "Contact Us" },
+              ].map(({ href, text, icon }, i) => (
+                <motion.a
+                  key={i}
+                  href={href}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 bg-transparent border-2 border-emerald-400 text-white font-semibold rounded-lg shadow-2xl
+                hover:shadow-emerald-500 hover:bg-emerald-400 hover:bg-opacity-25 transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  {text} {icon}
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
 
