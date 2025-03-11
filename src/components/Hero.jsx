@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./bubble.module.css";
+import RotatingSlider from "./RotatingSlider";
 import {
   ArrowRight,
   Rocket,
@@ -26,10 +27,17 @@ import {
 const Hero = () => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const tileSize = 100; // Fixed tile size
-
   const text =
     "We craft cutting-edge digital solutions that empower businesses to thrive in the modern era.";
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const images = [
+    "/public/image1.png",
+    "/public/image1.png",
+    "/public/image1.png",
+    "/public/image1.png",
+    "/public/image1.png",
+    "/public/image1.png",
+    ];
+
   // Update window dimensions on resize
   useEffect(() => {
     const updateDimensions = () => {
@@ -79,6 +87,10 @@ const Hero = () => {
                 zIndex: 1, // Bring to front
                 boxShadow: "0 0 20px 5px rgba(16, 185, 129, 0.6)", // Glow effect
                 transition: { duration: 0.2 },
+              }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
               }}
             />
           ))}
@@ -160,37 +172,6 @@ const Hero = () => {
               ))}
             </motion.p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* button er link a kaj kore na */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -205,7 +186,7 @@ const Hero = () => {
                 },
                 { href: "#contact", text: "Contact Us" },
               ].map(({ href, text, icon }, i) => (
-                <button
+                <a
                   key={i}
                   href={href}
                   className="rounded-xl border-2 border-dashed border-black bg-emerald-400 bg-opacity-55 px-6 py-3 
@@ -216,7 +197,7 @@ const Hero = () => {
                   active:rounded-2xl active:shadow-none"
                 >
                   {text} {icon}
-                </button>
+                </a>
               ))}
             </motion.div>
           </motion.div>
@@ -228,7 +209,11 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="hidden md:block"
           >
-            <div className="relative">
+            <div className=" min-h-screen">
+              <RotatingSlider images={images} />
+            </div>
+
+            {/* <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
               <div className="relative z-10 border-2 border-emerald-500 shadow-emerald-500 rounded-xl shadow-2xl">
                 <img
@@ -237,7 +222,7 @@ const Hero = () => {
                   className="rounded-xl w-full"
                 />
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>
