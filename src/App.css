@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.hoverText {
+  transition: color 0.3s ease-in-out;
+  color: white;
+}
