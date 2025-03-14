@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import TeamMemberCard from '../components/TeamMemberCard';
+import TeamCardSlider from "../components/TeamCardSlider";
 
 const Team = () => {
   const teamMembers = [
@@ -107,21 +107,7 @@ const Team = () => {
       {/* Team Members Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <TeamMemberCard 
-                key={index}
-                name={member.name}
-                role={member.role}
-                bio={member.bio}
-                imageUrl={member.imageUrl}
-                email={member.email}
-                linkedin={member.linkedin}
-                twitter={member.twitter}
-                delay={index * 0.1}
-              />
-            ))}
-          </div>
+          <TeamCardSlider teamMembers={teamMembers} />
         </div>
       </section>
       

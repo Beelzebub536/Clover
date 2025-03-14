@@ -31,10 +31,10 @@ const RotatingSlider = ({ images }) => {
   }, [isPaused, angle]);
 
   return (
-    <div className="flex justify-center relative w-full h-screen border-4">
+    <div className="flex justify-center relative w-full h-screen ">
       {/* Slider Container */}
       <div
-        className="absolute top-1/4 left-1/2 w-48 h-64 transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/3 w-48 h-64 transform -translate-x-1/2 -translate-y-1/2"
         style={{
           transformStyle: "preserve-3d",
           transform: `perspective(1000px) rotateX(-16deg) rotateY(${rotationAngle}deg)`,
@@ -44,7 +44,7 @@ const RotatingSlider = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="absolute inset-0 rounded-lg overflow-hidden shadow-lg"
+            className="absolute inset-0 rounded-lg overflow-hidden shadow-lg shadow-emerald-400"
             style={{
               transform: `rotateY(${
                 index * angle

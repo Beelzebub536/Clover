@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Canvas, useFrame } from 'react-three-fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
 // Simple 3D model component
