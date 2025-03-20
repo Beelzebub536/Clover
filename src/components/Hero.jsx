@@ -29,13 +29,13 @@ const Hero = () => {
   const text =
     "We craft cutting-edge digital solutions that empower businesses to thrive in the modern era.";
   const images = [
-    "/public/image1.png",
-    "/public/image1.png",
-    "/public/image1.png",
-    "/public/image1.png",
-    "/public/image1.png",
-    "/public/image1.png",
-    "/public/image1.png",
+    "/1.png",
+    "/2.png",
+    "/3.png",
+    "/4.png",
+    "/5.png",
+    "/6.png",
+    "/7.png",
   ];
 
   // Update window dimensions on resize
