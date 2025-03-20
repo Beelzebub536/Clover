@@ -34,7 +34,7 @@ const RotatingSlider = ({ images }) => {
     <div className="flex justify-center relative w-full h-screen ">
       {/* Slider Container */}
       <div
-        className="absolute top-1/3 w-48 h-64 transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/3 w-48 h-48 transform -translate-x-1/2 -translate-y-1/2"
         style={{
           transformStyle: "preserve-3d",
           transform: `perspective(1000px) rotateX(-16deg) rotateY(${rotationAngle}deg)`,
